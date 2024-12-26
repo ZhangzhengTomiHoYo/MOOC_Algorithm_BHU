@@ -17,11 +17,11 @@ def merge(arr, left, mid, right):
             arr[left+k] = arr_copy[j]
             k += 1
             j += 1
-    if i <= mid:
+    while i <= mid:
         arr[left+k] = arr_copy[i]
         i += 1
         k += 1
-    if j <= right:
+    while j <= right:
         arr[left+k] = arr_copy[j]
         j += 1
         k += 1
@@ -36,7 +36,8 @@ def merge_sort(arr, left, right):
     merge(arr, left, mid, right)
 
 if __name__ == "__main__":
-    arr = [38, 27, 43, 3, 9, 82, 10]
+    import random
+    arr = [random.randint(0, 1000) for _ in range(100)]
     print(f'未排序数组\t{arr}')
     left = 0
     right = len(arr) - 1
